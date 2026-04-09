@@ -10,7 +10,7 @@ function calcular() {
     if (media >=6){
         msg= `Parabéns ${nome}, você foi aprovado com média ${media.toFixed(2)}!`;
     } else{
-        msg = `Infezlimente ${nome}, você não foi reprovado com média ${media.toFixed(2)}.`;
+        msg = `Infezlimente ${nome}, você foi reprovado com média ${media.toFixed(2)}.`;
     }
 
     let res  = document.getElementById('situacao');
