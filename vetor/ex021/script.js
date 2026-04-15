@@ -12,7 +12,8 @@ function main() {
     for (i = 0; i <n ; i++) {
 
        //window.alert("Escreva os dados da "& ( i + 1) & "° pessoa:");
-        window.alert ("Dados da "+(i+1)+"ª Pessoa");
+       //window.alert("Escreva os dados da " + ( i + 1) + "° pessoa:");
+        window.alert (`Dados da ${i+1} ª Pessoa`);
         vetnomes[i] = window.prompt('Entre com o nome:');
         
         vetidades[i] = Number(window.prompt('Entre com a idade:'));
@@ -24,7 +25,7 @@ function main() {
         soma = soma + vetalturas[i];
     }
     mediaAltura = soma / n;
-    window.alert("Altura média das pessoas é: " + mediaAltura);
+    window.alert(`Altura média das pessoas é: ${mediaAltura}`);
     cont = 0;
     for (i = 0; i <n; i++) {
         if (vetidades[i] < 16) {
@@ -32,11 +33,25 @@ function main() {
         }
     }
     porcentagem =  (cont * 100) / n;
-    window.alert("A porcentagem de pessoas com menos de 16 é: " + porcentagem + "%");
-    for (i = 0; i < n;  i++) {
+    window.alert(`A porcentagem de pessoas com menos de 16 é: ${porcentagem} %`);
+    for (i = 0; i <n;  i++) {
         if (vetidades[i] < 16) {
-            window.alert("Nome das pessoas que são menores de 16 anos é: " + vetnomes[i]);
-        }
-    }
-}
+            window.alert(`Nome das pessoas que são menores de 16 anos é: ${vetnomes[i]}`);
+        }}
+    
+
+    let res  = document.getElementById('situacao');
+    res.innerHTML = ``;
+     //mostra a quantidade de pessoas
+    res.innerHTML += `<p> Quantidade de pessoas <mark>${n}</mark>...</p>`;
+    //mostra nome das pessoas
+    res.innerHTML += `<p> Nome das pessoas: <mark>${vetnomes}</mark>...</p>`;
+    //mostra média das alturas
+    res.innerHTML += `<p> A média final É: <mark>${mediaAltura.toFixed(2)}</mark>...</p>`;
+    //mostra porcentagem de pessoas menores de 16 anos
+    res.innerHTML += `<p> A porcentagem de pessoas com menos de 16 é: <mark>${porcentagem.toFixed(2)} % </mark>.</p>`;
+    //mostra nomes de pessoas menores de 16 anos
+    res.innerHTML += `<p> Nome das pessoas que são menores de 16 anos é: <mark>${vetnomes[i]}</mark>.</p>`;
+    //mensagem final
+    }  
 
